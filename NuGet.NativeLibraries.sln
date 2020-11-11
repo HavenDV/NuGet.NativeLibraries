@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VCRuntime.140", "src\VCRunt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VCRuntime.CefSharp.140", "src\VCRuntime.CefSharp.140\VCRuntime.CefSharp.140.csproj", "{CF755FA4-436D-4FEA-A061-2315CB7AD52B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hunspell.Native", "src\Hunspell.Native\Hunspell.Native.csproj", "{37932100-1970-407B-807A-2F9159C06AC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{CF755FA4-436D-4FEA-A061-2315CB7AD52B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF755FA4-436D-4FEA-A061-2315CB7AD52B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF755FA4-436D-4FEA-A061-2315CB7AD52B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37932100-1970-407B-807A-2F9159C06AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37932100-1970-407B-807A-2F9159C06AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37932100-1970-407B-807A-2F9159C06AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37932100-1970-407B-807A-2F9159C06AC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

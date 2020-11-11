@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Hunspell.Native</id>
+    <version>1.2.5359.26126</version>
+    <authors>Thomas Maierhofer</authors>
+    <owners>havendv</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/HavenDV/NuGet.NativeLibraries</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>NHunspell Spell Checker native DLLs</description>
+    <copyright>Copyright (C) Thomas Maierhofer and the Hunspell Authors</copyright>
+    <tags>NHunspell, Hunspell</tags>
+  </metadata>
+  <files>
+    <file src="runtimes/win-x64/native/Hunspellx64.dll" target="runtimes/win-x64/native" />
+    <file src="runtimes/win-x86/native/Hunspellx86.dll" target="runtimes/win-x86/native" />
+  </files>
+</package>
