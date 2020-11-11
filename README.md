@@ -1,2 +1,2 @@
-# Unofficial.Microsoft.mshtml.NetStandard
-Unofficial package containing Microsoft.mshtml.dll
+# NuGet.NativeLibraries
+NuGet packages containing native DLLs.
