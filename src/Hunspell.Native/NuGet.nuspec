@@ -8,7 +8,7 @@
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/HavenDV/NuGet.NativeLibraries</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>NHunspell Spell Checker native DLLs</description>
+    <description>NHunspell Spell Checker native DLLs.</description>
     <copyright>Copyright (C) Thomas Maierhofer and the Hunspell Authors</copyright>
     <tags>NHunspell, Hunspell</tags>
   </metadata>
