@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <Binaries32 Include="$(MSBuildThisFileDirectory)..\vc_redist\x86\*.*" />
+    <Binaries64 Include="$(MSBuildThisFileDirectory)..\vc_redist\x64\*.*" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="('$(Platform)' == 'x86') OR ('$(Platform)' == 'Win32')">
+    <None Include="@(Binaries32)">
+      <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PublishState>Include</PublishState>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Platform)' == 'x64'">
+    <None Include="@(Binaries64)">
+      <Link>.\%(RecursiveDir)%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PublishState>Include</PublishState>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Platform)' == 'AnyCPU'">
+    <None Include="@(Binaries32)">
+      <Link>.\x86\%(RecursiveDir)%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PublishState>Include</PublishState>
+    </None>
+    <None Include="@(Binaries64)">
+      <Link>.\x64\%(RecursiveDir)%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PublishState>Include</PublishState>
+    </None>
+  </ItemGroup>
+
+</Project>

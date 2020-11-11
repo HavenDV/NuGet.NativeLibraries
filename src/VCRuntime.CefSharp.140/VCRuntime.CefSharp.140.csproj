@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup Label="NuGet">
+    <Version>1.0.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageId>VCRuntime.CefSharp.140</PackageId>
+    <Description>Visual C++ 2015 Redistributable packed into a NuGet package. Contains vcruntime140.dll and msvcp140.dll</Description>
+    <Authors>havendv</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseFile></PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/HavenDV/VCRuntime.NuGet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/HavenDV/VCRuntime.NuGet</RepositoryUrl>
+    <PackageTags>vcruntime, Visual C++ 2015, Redistributable, vcruntime140, msvcp140</PackageTags>
+    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\vc_redist\140\x86\*.dll">
+      <Pack>true</Pack>
+      <PackagePath>vc_redist\x86</PackagePath>
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\..\vc_redist\140\x64\*.dll">
+      <Pack>true</Pack>
+      <PackagePath>vc_redist\x64</PackagePath>
+      <Visible>false</Visible>
+    </None>
+    <None Update="VCRuntime.CefSharp.140.targets">
+      <Pack>true</Pack>
+      <PackagePath>build</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
