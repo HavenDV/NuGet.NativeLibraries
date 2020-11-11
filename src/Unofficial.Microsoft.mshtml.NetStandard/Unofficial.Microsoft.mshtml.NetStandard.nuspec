@@ -6,7 +6,7 @@
     <authors>Microsoft</authors>
     <owners>havendv</owners>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/HavenDV/Unofficial.Microsoft.mshtml.NetStandard</projectUrl>
+    <projectUrl>https://github.com/HavenDV/NuGet.NativeLibraries</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unofficial package containing Microsoft.mshtml.dll file from Microsoft.</description>
     <copyright>Microsoft Corp. All rights reserved.</copyright>

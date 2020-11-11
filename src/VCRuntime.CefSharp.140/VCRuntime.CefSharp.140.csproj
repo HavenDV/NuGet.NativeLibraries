@@ -16,9 +16,7 @@
     <Description>Visual C++ 2015 Redistributable packed into a NuGet package. Contains vcruntime140.dll and msvcp140.dll</Description>
     <Authors>havendv</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageLicenseFile></PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/HavenDV/VCRuntime.NuGet</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/HavenDV/VCRuntime.NuGet</RepositoryUrl>
+    <RepositoryUrl>https://github.com/HavenDV/NuGet.NativeLibraries</RepositoryUrl>
     <PackageTags>vcruntime, Visual C++ 2015, Redistributable, vcruntime140, msvcp140</PackageTags>
     <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
   </PropertyGroup>
