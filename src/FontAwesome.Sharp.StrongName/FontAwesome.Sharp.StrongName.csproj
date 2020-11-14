@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Brutal.Dev.StrongNameSigner" Version="2.7.1" GeneratePathProperty="true" />
+    <PackageReference Include="Brutal.Dev.StrongNameSigner" Version="2.7.1" GeneratePathProperty="true" IncludeAssets="build" />
   </ItemGroup>
 
   <Target Name="StrongName" BeforeTargets="PrepareForBuild">
