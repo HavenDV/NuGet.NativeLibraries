@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+
+  <metadata>
+    <id>FontAwesome.Sharp.StrongName</id>
+    <version>5.15.3</version>
+    <authors>Awesome Incremented and Contributors</authors>
+    <owners>Awesome Incremented and Contributors</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <description>A library for embbeding Font Awesome icons in WPF &amp; Windows Forms applications</description>
+    <copyright>Copyright © Awesome Incremented 2015-2020</copyright>
+    <tags>fontawesome icon material-design dotnet-core wpf windows-forms</tags>
+    <repository url="https://github.com/awesome-inc/FontAwesome.Sharp" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.7.2" />
+      <group targetFramework=".NETFramework4.8" />
+      <group targetFramework=".NETCoreApp3.1" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.WindowsDesktop.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+
+  <files>
+    <file src="lib/net40/FontAwesome.Sharp.dll" target="lib/net40" />
+    <file src="lib/net45/FontAwesome.Sharp.dll" target="lib/net45" />
+    <file src="lib/net48/FontAwesome.Sharp.dll" target="lib/net48" />
+    <file src="lib/net472/FontAwesome.Sharp.dll" target="lib/net472" />
+    <file src="lib/netcoreapp3.1/FontAwesome.Sharp.dll" target="lib/netcoreapp3.1" />
+  </files>
+
+</package>
