@@ -19,7 +19,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageId>H.Build.CustomTasks</PackageId>
-    <Description>Constains custom MSBuild tasks: RemoveAll(path, from, to)</Description>
+    <Description>Constains custom MSBuild tasks: ReplaceAll(path, start, end, value)</Description>
     <Authors>havendv</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/HavenDV/NuGet.NativeLibraries</RepositoryUrl>

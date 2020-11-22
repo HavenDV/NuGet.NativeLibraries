@@ -6,6 +6,6 @@
     <TaskAssembly>$(MSBuildThisFileDirectory)..\tasks\$(TaskFolder)\H.Build.CustomTasks.dll</TaskAssembly>
   </PropertyGroup>
 
-  <UsingTask TaskName="H.Build.CustomTasks.RemoveAll" AssemblyFile="$(TaskAssembly)" />
+  <UsingTask TaskName="H.Build.CustomTasks.ReplaceAll" AssemblyFile="$(TaskAssembly)" />
 
 </Project>
