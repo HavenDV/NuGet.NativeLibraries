@@ -27,9 +27,13 @@ namespace H.Build.CustomTasks
 
         public override bool Execute()
         {
-            Path = Path ?? throw new ArgumentNullException(nameof(Path));
             Start = Start ?? throw new ArgumentNullException(nameof(Start));
             End = End ?? throw new ArgumentNullException(nameof(End));
+
+            if (Path == null && Paths == null)
+            {
+                throw new ArgumentException($"One of the properties must be set: {nameof(Path)} or {nameof(Paths)}");
+            }
 
             var sum = 0;
             foreach (var path in Paths ?? new []{ Path })
