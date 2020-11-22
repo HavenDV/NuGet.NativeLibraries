@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using H.Build.CustomTasks.Extensions;
 using Microsoft.Build.Framework;
@@ -12,10 +11,15 @@ namespace H.Build.CustomTasks
         #region Properties
 
         public string? Path { get; set; }
-        public IEnumerable<string>? Paths { get; set; }
+        public string[]? Paths { get; set; }
+
+        [Required]
         public string? Start { get; set; }
+
+        [Required]
         public string? End { get; set; }
-        public string? Value { get; set; }
+
+        public string Value { get; set; } = string.Empty;
 
         #endregion
 
