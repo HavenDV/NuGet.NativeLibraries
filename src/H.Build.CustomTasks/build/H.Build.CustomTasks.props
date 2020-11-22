@@ -2,10 +2,12 @@
 
   <PropertyGroup>
     <TaskFolder Condition=" '$(MSBuildRuntimeType)' == 'Core' ">netstandard2.0</TaskFolder>
-    <TaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core' ">net472</TaskFolder>
+    <TaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core' ">net4.7.2</TaskFolder>
     <TaskAssembly>$(MSBuildThisFileDirectory)..\tasks\$(TaskFolder)\H.Build.CustomTasks.dll</TaskAssembly>
+    <HBuildCustomTasksAssemblyFile>$(TaskAssembly)</HBuildCustomTasksAssemblyFile>
   </PropertyGroup>
 
   <UsingTask TaskName="H.Build.CustomTasks.ReplaceAll" AssemblyFile="$(TaskAssembly)" />
+  <Message Text="Hello: $(TaskAssembly)" Importance="high" />
 
 </Project>
