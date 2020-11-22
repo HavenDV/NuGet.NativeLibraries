@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -33,10 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="buildMultiTargeting\H.Build.CustomTasks.props">
-      <PackagePath>buildMultiTargeting</PackagePath>
-      <Pack>true</Pack>
-    </None>
     <None Include="build\H.Build.CustomTasks.props">
       <PackagePath>build</PackagePath>
       <Pack>true</Pack>
