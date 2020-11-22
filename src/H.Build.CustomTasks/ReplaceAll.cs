@@ -27,10 +27,9 @@ namespace H.Build.CustomTasks
             Path = Path ?? throw new ArgumentNullException(nameof(Path));
             Start = Start ?? throw new ArgumentNullException(nameof(Start));
             End = End ?? throw new ArgumentNullException(nameof(End));
-            Value = Value ?? throw new ArgumentNullException(nameof(Value));
 
             File.WriteAllText(Path, File.ReadAllText(Path)
-                .ReplaceAll(Start, End, Value, out var count, StringComparison.OrdinalIgnoreCase));
+                .ReplaceAll(Start, End, Value ?? string.Empty, out var count, StringComparison.OrdinalIgnoreCase));
 
             Log.LogMessage(MessageImportance.High, $"{nameof(ReplaceAll)}: Removed {count} matches.");
 
