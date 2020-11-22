@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using H.Build.CustomTasks.Extensions;
 using Microsoft.Build.Framework;
@@ -11,11 +12,9 @@ namespace H.Build.CustomTasks
         #region Properties
 
         public string? Path { get; set; }
-
+        public IEnumerable<string>? Paths { get; set; }
         public string? Start { get; set; }
-
         public string? End { get; set; }
-
         public string? Value { get; set; }
 
         #endregion
@@ -28,10 +27,22 @@ namespace H.Build.CustomTasks
             Start = Start ?? throw new ArgumentNullException(nameof(Start));
             End = End ?? throw new ArgumentNullException(nameof(End));
 
-            File.WriteAllText(Path, File.ReadAllText(Path)
-                .ReplaceAll(Start, End, Value ?? string.Empty, out var count, StringComparison.OrdinalIgnoreCase));
+            var sum = 0;
+            foreach (var path in Paths ?? new []{ Path })
+            {
+                var contents = File.ReadAllText(path);
+                if (!contents.Contains(Start) || !contents.Contains(End))
+                {
+                    continue;
+                }
 
-            Log.LogMessage(MessageImportance.High, $"{nameof(ReplaceAll)}: Removed {count} matches.");
+                File.WriteAllText(path, contents
+                    .ReplaceAll(Start, End, Value ?? string.Empty, out var count, StringComparison.OrdinalIgnoreCase));
+
+                sum += count;
+            }
+
+            Log.LogMessage(MessageImportance.High, $"{nameof(ReplaceAll)}: Removed {sum} matches.");
 
             return true;
         }

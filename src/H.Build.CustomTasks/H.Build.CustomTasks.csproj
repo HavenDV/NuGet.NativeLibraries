@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <Version>0.9.4</Version>
+    <Version>0.9.5</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
