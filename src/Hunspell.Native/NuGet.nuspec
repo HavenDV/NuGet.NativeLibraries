@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Hunspell.Native</id>
-    <version>1.2.5359.26129</version>
+    <version>1.2.5359.26130</version>
     <authors>Thomas Maierhofer</authors>
     <owners>havendv</owners>
     <license type="expression">MIT</license>
@@ -11,10 +11,12 @@
     <description>NHunspell Spell Checker native DLLs.</description>
     <copyright>Copyright (C) Thomas Maierhofer and the Hunspell Authors</copyright>
     <tags>NHunspell, Hunspell</tags>
+    <icon>nuget_icon.png</icon>
   </metadata>
   <files>
     <file src="native/win-x64/Hunspellx64.dll" target="build\x64" />
     <file src="native/win-x86/Hunspellx86.dll" target="build\x86" />
     <file src="Hunspell.Native.targets" target="build" />
+    <file src="../../docs/nuget_icon.png" target="nuget_icon.png" />
   </files>
 </package>

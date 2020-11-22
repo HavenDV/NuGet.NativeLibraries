@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Unofficial.Microsoft.mshtml.NetStandard</id>
-    <version>7.0.3300.1</version>
+    <version>7.0.3300.2</version>
     <authors>Microsoft</authors>
     <owners>havendv</owners>
     <license type="expression">MIT</license>
@@ -11,6 +11,7 @@
     <description>Unofficial package containing Microsoft.mshtml.dll file from Microsoft.</description>
     <copyright>Microsoft Corp. All rights reserved.</copyright>
     <tags>MSHTML Microsoft</tags>
+    <icon>nuget_icon.png</icon>
     <dependencies>
       <group targetFramework="net40" />
       <group targetFramework="netstandard1.0" />
@@ -19,5 +20,6 @@
   <files>
     <file src="lib/net40/Microsoft.mshtml.dll" target="lib/net40" />
     <file src="lib/net40/Microsoft.mshtml.dll" target="lib/netstandard1.0" />
+    <file src="../../docs/nuget_icon.png" target="nuget_icon.png" />
   </files>
 </package>

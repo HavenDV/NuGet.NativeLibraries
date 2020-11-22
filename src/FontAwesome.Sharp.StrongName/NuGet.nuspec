@@ -3,7 +3,7 @@
 
   <metadata>
     <id>FontAwesome.Sharp.StrongName</id>
-    <version>5.15.3.2</version>
+    <version>5.15.3.3</version>
     <authors>Awesome Incremented and Contributors</authors>
     <owners>Awesome Incremented and Contributors</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -12,6 +12,7 @@
     <description>A library for embbeding Font Awesome icons in WPF &amp; Windows Forms applications</description>
     <copyright>Copyright © Awesome Incremented 2015-2020</copyright>
     <tags>fontawesome icon material-design dotnet-core wpf windows-forms</tags>
+    <icon>nuget_icon.png</icon>
     <repository url="https://github.com/awesome-inc/FontAwesome.Sharp" />
     <dependencies>
       <group targetFramework=".NETFramework4.0" />
@@ -33,6 +34,7 @@
     <file src="lib/net48/FontAwesome.Sharp.dll" target="lib/net48" />
     <file src="lib/net472/FontAwesome.Sharp.dll" target="lib/net472" />
     <file src="lib/netcoreapp3.1/FontAwesome.Sharp.dll" target="lib/netcoreapp3.1" />
+    <file src="../../docs/nuget_icon.png" target="nuget_icon.png" />
   </files>
 
 </package>
