@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>VCRuntime.140</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <authors>Microsoft</authors>
     <owners>havendv</owners>
     <license type="expression">MIT</license>

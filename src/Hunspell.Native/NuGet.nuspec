@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Hunspell.Native</id>
-    <version>1.2.5359.26128</version>
+    <version>1.2.5359.26129</version>
     <authors>Thomas Maierhofer</authors>
     <owners>havendv</owners>
     <license type="expression">MIT</license>
