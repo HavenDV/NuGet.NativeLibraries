@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>VCRuntime.CefSharp.140</id>
+    <version>1.0.4</version>
+    <authors>Microsoft</authors>
+    <owners>havendv</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/HavenDV/NuGet.NativeLibraries</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Visual C++ 2015 Redistributable packed into a NuGet package. Contains vcruntime140.dll and msvcp140.dll.</description>
+    <copyright>Microsoft Corp. All rights reserved.</copyright>
+    <tags>vcruntime, Visual C++ 2015, Redistributable, vcruntime140, msvcp140</tags>
+    <icon>nuget_icon.png</icon>
+  </metadata>
+  <files>
+    <file src="../../vc_redist/140/x86/msvcp140.dll" target="vc_redist/x86" />
+    <file src="../../vc_redist/140/x86/vcruntime140.dll" target="vc_redist/x86" />
+    <file src="../../vc_redist/140/x64/msvcp140.dll" target="vc_redist/x64" />
+    <file src="../../vc_redist/140/x64/vcruntime140.dll" target="vc_redist/x64" />
+    <file src="VCRuntime.CefSharp.140.targets" target="build" />
+    <file src="../../docs/nuget_icon.png" target="" />
+  </files>
+</package>
