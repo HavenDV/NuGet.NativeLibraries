@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hunspell.Native", "src\Huns
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontAwesome.Sharp.StrongName", "src\FontAwesome.Sharp.StrongName\FontAwesome.Sharp.StrongName.csproj", "{36C8F6B2-D629-44F6-8E75-E189A16A3D2F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H.Build.CustomTasks", "src\H.Build.CustomTasks\H.Build.CustomTasks.csproj", "{191352DB-F052-4089-B6E3-9716969D40B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{36C8F6B2-D629-44F6-8E75-E189A16A3D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36C8F6B2-D629-44F6-8E75-E189A16A3D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36C8F6B2-D629-44F6-8E75-E189A16A3D2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{191352DB-F052-4089-B6E3-9716969D40B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191352DB-F052-4089-B6E3-9716969D40B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191352DB-F052-4089-B6E3-9716969D40B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191352DB-F052-4089-B6E3-9716969D40B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

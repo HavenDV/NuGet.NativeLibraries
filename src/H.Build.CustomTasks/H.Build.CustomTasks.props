@@ -1,0 +1,11 @@
+﻿<Project TreatAsLocalProperty="TaskFolder;TaskAssembly">
+
+  <PropertyGroup>
+    <TaskFolder Condition=" '$(MSBuildRuntimeType)' == 'Core' ">netstandard2.0</TaskFolder>
+    <TaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core' ">net472</TaskFolder>
+    <TaskAssembly>$(MSBuildThisFileDirectory)..\tasks\$(TaskFolder)\H.Build.CustomTasks.dll</TaskAssembly>
+  </PropertyGroup>
+
+  <UsingTask TaskName="MSBuildTasks.RemoveAll" AssemblyFile="$(TaskAssembly)" />
+
+</Project>
