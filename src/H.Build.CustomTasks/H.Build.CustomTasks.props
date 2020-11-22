@@ -1,0 +1,10 @@
+﻿<Project TreatAsLocalProperty="TaskNamespace;TaskAssembly">
+
+  <PropertyGroup>
+    <TaskNamespace>H.Build.CustomTasks</TaskNamespace>
+    <TaskAssembly>$(MSBuildThisFileDirectory)..\tasks\netstandard2.0\H.Build.CustomTasks.dll</TaskAssembly>
+  </PropertyGroup>
+
+  <UsingTask TaskName="$(TaskNamespace).ReplaceAll" AssemblyFile="$(TaskAssembly)" />
+
+</Project>

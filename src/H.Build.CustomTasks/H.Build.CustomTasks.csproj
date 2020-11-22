@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net4.7.2</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
     <NoWarn>$(NoWarn);NU5100;NU5128;</NoWarn>
@@ -14,12 +14,12 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageId>H.Build.CustomTasks</PackageId>
-    <Description>Constains custom MSBuild tasks: ReplaceAll(path, start, end, value)</Description>
+    <Description>Constains custom MSBuild tasks: ReplaceAll(Path/Paths, Start, End, Value)</Description>
     <Authors>havendv</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <DevelopmentDependency>true</DevelopmentDependency>
@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="build\H.Build.CustomTasks.props">
+    <None Include="H.Build.CustomTasks.props">
       <PackagePath>build</PackagePath>
       <Pack>true</Pack>
     </None>
