@@ -7,11 +7,11 @@ namespace H.Build.CustomTasks
     {
         #region Properties
 
-        public string Path { get; set; }
+        public string? Path { get; set; }
 
-        public string From { get; set; }
+        public string? From { get; set; }
 
-        public string To { get; set; }
+        public string? To { get; set; }
 
         #endregion
 
