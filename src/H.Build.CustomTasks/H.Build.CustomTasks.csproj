@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -22,6 +22,7 @@
     <Description>Constains custom MSBuild tasks: ReplaceAll(path, start, end, value)</Description>
     <Authors>havendv</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <DevelopmentDependency>true</DevelopmentDependency>
     <RepositoryUrl>https://github.com/HavenDV/NuGet.NativeLibraries</RepositoryUrl>
     <PackageTags>replaceall, msbuild, tasks</PackageTags>
     <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
