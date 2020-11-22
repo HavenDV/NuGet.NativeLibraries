@@ -35,8 +35,7 @@ namespace H.Build.CustomTasks
                 throw new ArgumentException($"One of the properties must be set: {nameof(Path)} or {nameof(Paths)}");
             }
 
-            var sum = 0;
-            foreach (var path in Paths ?? new []{ Path })
+            foreach (var path in Paths ?? new []{ Path ?? string.Empty })
             {
                 var contents = File.ReadAllText(path);
                 if (!contents.Contains(Start) || !contents.Contains(End))
@@ -47,10 +46,8 @@ namespace H.Build.CustomTasks
                 File.WriteAllText(path, contents
                     .ReplaceAll(Start, End, Value ?? string.Empty, out var count, StringComparison.OrdinalIgnoreCase));
 
-                sum += count;
+                Log.LogMessage(MessageImportance.High, $"{nameof(ReplaceAll)}: Removed {count} matches from \"{path}\".");
             }
-
-            Log.LogMessage(MessageImportance.High, $"{nameof(ReplaceAll)}: Removed {sum} matches.");
 
             return true;
         }
