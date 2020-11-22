@@ -17,6 +17,6 @@
     <file src="native/win-x64/Hunspellx64.dll" target="build\x64" />
     <file src="native/win-x86/Hunspellx86.dll" target="build\x86" />
     <file src="Hunspell.Native.targets" target="build" />
-    <file src="../../docs/nuget_icon.png" target="nuget_icon.png" />
+    <file src="../../docs/nuget_icon.png" target="" />
   </files>
 </package>

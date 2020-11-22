@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <NoWarn>$(NoWarn);NU5100;NU5128;</NoWarn>
+    <NoWarn>$(NoWarn);NU5100;NU5128</NoWarn>
     <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
   </PropertyGroup>
 

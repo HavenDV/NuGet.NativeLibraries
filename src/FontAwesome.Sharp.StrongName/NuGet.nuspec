@@ -34,7 +34,7 @@
     <file src="lib/net48/FontAwesome.Sharp.dll" target="lib/net48" />
     <file src="lib/net472/FontAwesome.Sharp.dll" target="lib/net472" />
     <file src="lib/netcoreapp3.1/FontAwesome.Sharp.dll" target="lib/netcoreapp3.1" />
-    <file src="../../docs/nuget_icon.png" target="nuget_icon.png" />
+    <file src="../../docs/nuget_icon.png" target="" />
   </files>
 
 </package>

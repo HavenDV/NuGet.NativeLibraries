@@ -18,6 +18,6 @@
     <file src="../../vc_redist/140/x86/vcruntime140.dll" target="runtimes/win-x86/native" />
     <file src="../../vc_redist/140/x64/msvcp140.dll" target="runtimes/win-x64/native" />
     <file src="../../vc_redist/140/x64/vcruntime140.dll" target="runtimes/win-x64/native" />
-    <file src="../../docs/nuget_icon.png" target="nuget_icon.png" />
+    <file src="../../docs/nuget_icon.png" target="" />
   </files>
 </package>

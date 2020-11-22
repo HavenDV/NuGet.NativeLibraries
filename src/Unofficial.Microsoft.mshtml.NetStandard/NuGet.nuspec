@@ -20,6 +20,6 @@
   <files>
     <file src="lib/net40/Microsoft.mshtml.dll" target="lib/net40" />
     <file src="lib/net40/Microsoft.mshtml.dll" target="lib/netstandard1.0" />
-    <file src="../../docs/nuget_icon.png" target="nuget_icon.png" />
+    <file src="../../docs/nuget_icon.png" target="" />
   </files>
 </package>
