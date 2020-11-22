@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageId>VCRuntime.CefSharp.140</PackageId>
     <Description>Visual C++ 2015 Redistributable packed into a NuGet package. Contains vcruntime140.dll and msvcp140.dll</Description>
     <Authors>havendv</Authors>
