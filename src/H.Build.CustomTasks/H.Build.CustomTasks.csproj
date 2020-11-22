@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
     <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
-    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <NoWarn>$(NoWarn);NU5100;NU5128;</NoWarn>
     <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
   </PropertyGroup>
 
@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <Version>0.9.2</Version>
+    <Version>0.9.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -32,7 +32,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="H.Build.CustomTasks.props">
+    <None Update="buildMultiTargeting\H.Build.CustomTasks.props">
+      <PackagePath>buildMultiTargeting</PackagePath>
+      <Pack>true</Pack>
+    </None>
+    <None Update="build\H.Build.CustomTasks.props">
       <PackagePath>build</PackagePath>
       <Pack>true</Pack>
     </None>
