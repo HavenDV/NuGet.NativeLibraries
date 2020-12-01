@@ -20,6 +20,7 @@ namespace H.Build.CustomTasks
         public string? End { get; set; }
 
         public string Value { get; set; } = string.Empty;
+        public bool IncludeStartEnd { get; set; } = true;
 
         #endregion
 
@@ -44,7 +45,7 @@ namespace H.Build.CustomTasks
                 }
 
                 File.WriteAllText(path, contents
-                    .ReplaceAll(Start, End, Value ?? string.Empty, out var count, StringComparison.OrdinalIgnoreCase));
+                    .ReplaceAll(Start, End, Value ?? string.Empty, out var count, IncludeStartEnd, StringComparison.OrdinalIgnoreCase));
 
                 Log.LogMessage(MessageImportance.High, $"{nameof(ReplaceAll)}: Removed {count} matches from \"{path}\".");
             }
