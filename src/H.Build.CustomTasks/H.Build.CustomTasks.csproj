@@ -12,11 +12,13 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <Version>1.0.8</Version>
+    <Version>1.0.9</Version>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageId>H.Build.CustomTasks</PackageId>
-    <Description>Constains custom MSBuild tasks: ReplaceAll(Path/Paths, Start, End, Value)</Description>
+    <Description>Constains custom MSBuild tasks: 
+      ReplaceAll(Paths, Start, End, Value = string.Empty, IncludeStartEnd = true)
+    </Description>
     <DevelopmentDependency>true</DevelopmentDependency>
     <PackageTags>replaceall, msbuild, tasks</PackageTags>
     <PackageReleaseNotes>Initial release.</PackageReleaseNotes>

@@ -10,7 +10,7 @@ namespace H.Build.CustomTasks
     {
         #region Properties
 
-        public string? Path { get; set; }
+        [Required]
         public string[]? Paths { get; set; }
 
         [Required]
@@ -30,13 +30,9 @@ namespace H.Build.CustomTasks
         {
             Start = Start ?? throw new ArgumentNullException(nameof(Start));
             End = End ?? throw new ArgumentNullException(nameof(End));
+            Paths = Paths ?? throw new ArgumentNullException(nameof(Paths));
 
-            if (Path == null && Paths == null)
-            {
-                throw new ArgumentException($"One of the properties must be set: {nameof(Path)} or {nameof(Paths)}");
-            }
-
-            foreach (var path in Paths ?? new []{ Path ?? string.Empty })
+            foreach (var path in Paths)
             {
                 var contents = File.ReadAllText(path);
                 if (!contents.Contains(Start) || !contents.Contains(End))
