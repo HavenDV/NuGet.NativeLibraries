@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Unofficial.PLUSManaged</id>
+    <version>5.20.1.0</version>
+    <authors>Concept Software</authors>
+    <owners>Concept Software</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/HavenDV/NuGet.NativeLibraries</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Unofficial package containing PLUSManaged.dll.</description>
+    <copyright>Copyright @ 2020 Concept Software, Inc.</copyright>
+    <tags>PLUSManaged, licensing</tags>
+    <icon>nuget_icon.png</icon>
+    <dependencies>
+      <group targetFramework="net40" />
+      <group targetFramework="netstandard1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="lib/net40/PLUSManaged.dll" target="lib/net40" />
+    <file src="lib/net40/PLUSManaged.dll" target="lib/netstandard1.0" />
+    <file src="lib/net40/PLUSManaged.xml" target="lib/net40" />
+    <file src="lib/net40/PLUSManaged.xml" target="lib/netstandard1.0" />
+    <file src="lib/net40/PLUSManaged.XmlSerializers.dll" target="lib/net40" />
+    <file src="lib/net40/PLUSManaged.XmlSerializers.dll" target="lib/netstandard1.0" />
+    <file src="lib/net40/PLUSManagedGui.dll" target="lib/net40" />
+    <file src="lib/net40/PLUSManagedGui.dll" target="lib/netstandard1.0" />
+    <file src="lib/net40/PLUSManagedGui.xml" target="lib/net40" />
+    <file src="lib/net40/PLUSManagedGui.xml" target="lib/netstandard1.0" />
+    <file src="../../docs/nuget_icon.png" target="" />
+  </files>
+</package>

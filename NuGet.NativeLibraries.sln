@@ -25,6 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontAwesome.Sharp.StrongNam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H.Build.CustomTasks", "src\H.Build.CustomTasks\H.Build.CustomTasks.csproj", "{191352DB-F052-4089-B6E3-9716969D40B4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JCS.ToggleSwitch", "src\JCS.ToggleSwitch\JCS.ToggleSwitch.csproj", "{A7B5B956-58EE-481D-8EA6-8A999627E6E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unofficial.PLUSManaged", "src\Unofficial.PLUSManaged\Unofficial.PLUSManaged.csproj", "{0C100A97-4BF7-4711-B2BB-380BCDC0E89B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,14 @@ Global
 		{191352DB-F052-4089-B6E3-9716969D40B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{191352DB-F052-4089-B6E3-9716969D40B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{191352DB-F052-4089-B6E3-9716969D40B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7B5B956-58EE-481D-8EA6-8A999627E6E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7B5B956-58EE-481D-8EA6-8A999627E6E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7B5B956-58EE-481D-8EA6-8A999627E6E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7B5B956-58EE-481D-8EA6-8A999627E6E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C100A97-4BF7-4711-B2BB-380BCDC0E89B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C100A97-4BF7-4711-B2BB-380BCDC0E89B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C100A97-4BF7-4711-B2BB-380BCDC0E89B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C100A97-4BF7-4711-B2BB-380BCDC0E89B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

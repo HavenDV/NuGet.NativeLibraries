@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>JCS.ToggleSwitch</id>
+    <version>1.0.0.0</version>
+    <authors>JCS</authors>
+    <owners>JCS</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/HavenDV/NuGet.NativeLibraries</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Unofficial package containing ToggleSwitch.dll.</description>
+    <copyright>JCS</copyright>
+    <tags>JCS, ToggleSwitch</tags>
+    <icon>nuget_icon.png</icon>
+    <dependencies>
+      <group targetFramework="net40" />
+      <group targetFramework="netstandard1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="lib/net40/ToggleSwitch.dll" target="lib/net40" />
+    <file src="lib/net40/ToggleSwitch.dll" target="lib/netstandard1.0" />
+    <file src="../../docs/nuget_icon.png" target="" />
+  </files>
+</package>

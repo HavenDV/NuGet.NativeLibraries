@@ -1,0 +1,1144 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PLUSManagedGui</name>
+    </assembly>
+    <members>
+        <member name="T:com.softwarekey.Client.Gui.InternetSettings">
+            <summary>Contains Internet connection and proxy server settings, which are used when calling to SOLO Server web services.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.InternetSettings.#ctor">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.Gui.InternetSettings"/> object.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.InternetSettings.ShowProxyAuthenticationCredentialsDialog">
+            <summary>Shows the proxy authentication credentials dialog to obtain the credentials from the user.</summary>
+            <returns>Returns true if we got data from the proxy authentication credentials dialog.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.InternetSettings.InitializeWebServiceObject(System.Web.Services.Protocols.SoapHttpClientProtocol@)">
+            <summary>Initializes a web service object.</summary>
+            <param name="ws">The object which will be used to call web service methods.</param>
+            <returns>Returns true if the object was initialized and is considered usable.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.InternetSettings.InitializeProxyObject(System.Net.IWebProxy@)">
+            <summary>Initializes a proxy object.</summary>
+            <param name="proxy">The <see cref="T:System.Net.IWebProxy"/> reference which will be initialized.  This may be set to null if no proxy is being used.</param>
+            <returns>Returns true if the proxy object was initialized successfully.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.InternetSettings.AutoDetect">
+            <summary>Runs Internet and proxy auto-detection, regardless of the value in the <see cref="P:com.softwarekey.Client.Gui.InternetSettings.EnableAutoDetection"/> property.</summary>
+            <returns>Returns true if an Internet connection is present.  If false is returned, check the ConnectionInformation.LastError property for details.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.InternetSettings.CreateNewXmlActivationServiceObject">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.WebService.XmlActivationService.XmlActivationService"/> object, which may be used for processing web service methods centered around activation.</summary>
+            <remarks>
+            <note type="caution">
+            <para>If <see cref="P:com.softwarekey.Client.Gui.InternetSettings.EnableAutoDetection"/> is set to true, an automatic detection test may be run to test connectivity and detect proxy settings, which can cause delays.</para>
+            </note>
+            <para>The code analysis message suppressed is appropriate since this is returning the object to its caller.  Disposing the object before the caller
+            receives it would make this method ineffective.</para>
+            </remarks>
+            <returns>Returns a new <see cref="T:com.softwarekey.Client.WebService.XmlActivationService.XmlActivationService"/> object.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.InternetSettings.CreateNewXmlLicenseFileServiceObject">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.WebService.XmlLicenseFileService.XmlLicenseFileService"/> object, which may be used for processing web service methods centered around XML license file calls to SOLO Server.</summary>
+            <remarks>
+            <note type="caution">
+            <para>If <see cref="P:com.softwarekey.Client.Gui.InternetSettings.EnableAutoDetection"/> is set to true, an automatic detection test may be run to test connectivity and detect proxy settings, which can cause delays.</para>
+            </note>
+            <para>The code analysis message suppressed is appropriate since this is returning the object to its caller.  Disposing the object before the caller
+            receives it would make this method ineffective.</para>
+            </remarks>
+            <returns>Returns a new <see cref="T:com.softwarekey.Client.WebService.XmlLicenseFileService.XmlLicenseFileService"/> object.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.InternetSettings.CreateNewXmlLicenseServiceObject">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.WebService.XmlLicenseService.XmlLicenseService"/> object, which may be used for processing web service methods centered around XML license calls to SOLO Server (such as update checks).</summary>
+            <remarks>
+            <note type="caution">
+            <para>If <see cref="P:com.softwarekey.Client.Gui.InternetSettings.EnableAutoDetection"/> is set to true, an automatic detection test may be run to test connectivity and detect proxy settings, which can cause delays.</para>
+            </note>
+            <para>The code analysis message suppressed is appropriate since this is returning the object to its caller.  Disposing the object before the caller
+            receives it would make this method ineffective.</para>
+            </remarks>
+            <returns>Returns a new <see cref="T:com.softwarekey.Client.WebService.XmlLicenseService.XmlLicenseService"/> object.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.InternetSettings.CreateNewXmlNetworkFloatingServiceObject">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.WebService.XmlNetworkFloatingService.XmlNetworkFloatingService"/> object, which may be used for processing web service methods centered around network floating licensing via SOLO Server.</summary>
+            <remarks>
+            <note type="caution">
+            <para>If <see cref="P:com.softwarekey.Client.Gui.InternetSettings.EnableAutoDetection"/> is set to true, an automatic detection test may be run to test connectivity and detect proxy settings, which can cause delays.</para>
+            </note>
+            <para>The code analysis message suppressed is appropriate since this is returning the object to its caller.  Disposing the object before the caller
+            receives it would make this method ineffective.</para>
+            </remarks>
+            <returns>Returns a new <see cref="T:com.softwarekey.Client.WebService.XmlNetworkFloatingService.XmlNetworkFloatingService"/> object.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.InternetSettings.ResetProxyAuthenticationCredentials">
+            <summary>Resets/disregards any prior proxy authentication credentials that may have been entered.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.InternetSettings.AutoDetectionTimeout">
+            <summary>Gets or sets the maximum amount of time (in milliseconds) an automatic detection tests to run.</summary>
+            <remarks>
+            <para>This property is only applicable when <see cref="P:com.softwarekey.Client.Gui.InternetSettings.EnableAutoDetection"/> is set to true.</para>
+            <note type="caution">
+            <para>
+            Automatic proxy detection is a convenient way to detect Internet and proxy server requirements, but can cause
+            delays, as this feature relies on test requests.  Delays will occur more frequently when a system is using
+            a slow Internet connection, or lacks Internet connectivity entirely.
+            </para>
+            </note>
+            </remarks>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.InternetSettings.AutoDetectionUri">
+            <summary>Gets or sets the URL to use for automatic detection tests.</summary>
+            <remarks>
+            <note type="caution">
+            <para>
+            This URL should match one of the web service URLs, and uses the default <see cref="P:com.softwarekey.Client.Gui.InternetSettings.XmlActivationServiceUri"/>
+            value for tests unless another URL is specified.
+            </para>
+            </note>
+            </remarks>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.InternetSettings.ConnectionInformation">
+            <summary>Gets or sets the <see cref="T:com.softwarekey.Client.Utils.InternetConnectionInformation"/> object, which contains data about the application's Internet connectivity.</summary>
+            <remarks>
+            <note type="caution">
+            <para>Creating a new <see cref="T:com.softwarekey.Client.Utils.InternetConnectionInformation"/> object will immediately run an automatic detection test, which may cause delays.
+            Accessing this property will cause an <see cref="T:com.softwarekey.Client.Utils.InternetConnectionInformation"/> object to be created if one has not already been created.</para>
+            </note>
+            </remarks>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.InternetSettings.EnableAutoDetection">
+            <summary>Gets or sets whether or not automatic detection is enabled.</summary>
+            <remarks>
+            <note type="caution">
+            <para>
+            Automatic proxy detection is a convenient way to detect Internet and proxy server requirements, but can cause
+            delays, as this feature relies on test requests.  Delays will occur more frequently when a system is using
+            a slow Internet connection, or lacks Internet connectivity entirely.
+            </para>
+            </note>
+            </remarks>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.InternetSettings.ProxyAuthenticationCredentials">
+            <summary>Gets or sets the <see cref="T:System.Net.NetworkCredential"/> (which includes the username and password) used for authenticating with a proxy server (may be null if unused).</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.InternetSettings.ManualRequestUri">
+            <summary>Gets or sets the URL to access SOLO Server's manual request processing page.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.InternetSettings.XmlActivationServiceUri">
+            <summary>Gets or sets the URL to access SOLO Server's XmlActivationService web service.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.InternetSettings.XmlLicenseFileServiceUri">
+            <summary>Gets or sets the URL to access SOLO Server's XmlLicenseFileService web service.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.InternetSettings.XmlLicenseServiceUri">
+            <summary>Gets or sets the URL to access SOLO Server's XmlLicenseService web service.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.InternetSettings.XmlNetworkFloatingServiceUri">
+            <summary>Gets or sets the URL to access SOLO Server's XmlNetworkFloatingService web service.</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.LicenseManagementAction">
+            <summary>Initializes and processes license management actions.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.#ctor(com.softwarekey.Client.Gui.LicensingGui)">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.Gui.LicenseManagementAction"/> object.</summary>
+            <param name="settings">The <see cref="T:com.softwarekey.Client.Gui.LicensingGui"/> required for processing.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.Create(com.softwarekey.Client.Gui.LicensingGui,com.softwarekey.Client.Gui.LicenseManagementForm)">
+            <summary>Creates and initializes a new <see cref="T:com.softwarekey.Client.Gui.LicenseManagementAction"/> object using the data from the <see cref="T:com.softwarekey.Client.Gui.LicenseManagementForm"/>.</summary>
+            <param name="settings">The <see cref="T:com.softwarekey.Client.Gui.LicensingGui"/> object required for processing.</param>
+            <param name="form">The <see cref="T:com.softwarekey.Client.Gui.LicenseManagementForm"/> containing the validated form fields.</param>
+            <returns>Returns a new <see cref="T:com.softwarekey.Client.Gui.LicenseManagementAction"/> object.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.GenerateManualActionContent(com.softwarekey.Client.Gui.LicensingGui,com.softwarekey.Client.Gui.LicenseManagementForm)">
+            <summary>Generates content needed to save a manual action's state.</summary>
+            <param name="settings">The GUI settings.</param>
+            <param name="form">The license management form.</param>
+            <returns>Returns a string containing the contents which should be saved.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.Parse(System.String,com.softwarekey.Client.Gui.LicensingGui)">
+            <summary>Parses content needed to restore a manual action's state.</summary>
+            <param name="content">The contents to parse.</param>
+            <param name="settings">The GUI settings.</param>
+            <returns>Returns the <see cref="T:com.softwarekey.Client.Gui.LicenseManagementAction"/>, which may be used to restore the form to the appropriate state.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.Process">
+            <summary>Processes an action.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.ProcessActivation">
+            <summary>Processes an activation.</summary>
+            <returns>Returns true if successful.  If false is returned, check the <see cref="P:com.softwarekey.Client.Gui.LicenseManagementAction.LastError"/> property for details.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.ProcessRefresh">
+            <summary>Processes a license refresh.</summary>
+            <returns>Returns true if successful.  If false is returned, check the <see cref="P:com.softwarekey.Client.Gui.LicenseManagementAction.LastError"/> property for details.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.ProcessDeactivation">
+            <summary>Processes a deactivation.</summary>
+            <returns>Returns true if successful.  If false is returned, check the <see cref="P:com.softwarekey.Client.Gui.LicenseManagementAction.LastError"/> property for details.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.ProcessManualResponse">
+            <summary>Processes a manual response.</summary>
+            <returns>Returns true if successful.  If false is returned, check the <see cref="P:com.softwarekey.Client.Gui.LicenseManagementAction.LastError"/> property for details.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.ProcessTriggerCode">
+            <summary>Processes a Protection PLUS 4 compatible Trigger Code.</summary>
+            <returns>Returns true if successful, or false if trigger code processing failed.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.ToString">
+            <summary>Generates a string containing the details of the results.</summary>
+            <returns>Returns a string containing the details of the results.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementAction.ToString(System.Boolean)">
+            <summary>Generates a string containing the details of the results.</summary>
+            <param name="includePassword">Whether or not the password should be included in the string (if applicable).</param>
+            <returns>Returns a string containing the details of the results.</returns>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.ActivationCode1">
+            <summary>Gets or sets the "Activation Code 1" value entered by the user.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.ActivationCode2">
+            <summary>Gets or sets the "Activation Code 2" value entered by the user.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.InstallationID">
+            <summary>Gets or sets the Installation ID</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.InstallationName">
+            <summary>Gets or sets the Installation Name</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.LastError">
+            <summary>Gets or sets the last error that occurred.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.LicenseID">
+            <summary>Gets or sets the License ID specified by the user.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.ManualResponse">
+            <summary>Gets or sets the manual response data.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.NewLicenseContent">
+            <summary>Gets or sets the new license content.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.Password">
+            <summary>Gets or sets the password specified by the user.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.PostProcessingSuccessful">
+            <summary>Gets or sets whether or not post-processing was successful.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.ActionType">
+            <summary>Gets or sets the type of action.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.UserCode1">
+            <summary>Gets or sets the User Code 1 (Session Code) value used for manual trigger code processing.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.UserCode2">
+            <summary>Gets or sets the user Code 2 (Computer ID) value used for manual trigger code processing.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.ProcessedSuccessfully">
+            <summary>Gets whether or not the action has been processed successfully.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.TriggerCodeNumber">
+            <summary>Gets the trigger code number derived from trigger code processing.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementAction.TriggerCodeEventData">
+            <summary>Gets the trigger code event data derived from trigger code processing.</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs">
+            <summary>Contains properties with data about a completed license management action.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs.#ctor(com.softwarekey.Client.Gui.LicenseManagementAction)">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs"/> object.</summary>
+            <param name="action">The action processing result.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs.ToString">
+            <summary>A string representation of the action's result.</summary>
+            <returns>Returns a string describing the result of the action.</returns>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs.LastError">
+            <summary>Gets the last error that occurred.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs.PostProcessingSuccessful">
+            <summary>Gets or sets whether or not action post-processing has been completed successfully.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs.ActionType">
+            <summary>Gets the type of action.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs.ProcessedSuccessfully">
+            <summary>Gets whether or not the action has been completed successfully.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs.LicenseID">
+            <summary>Gets the License ID entered by the user.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs.NewLicenseContent">
+            <summary>Gets whether or not the action was processed successfully and resulted in new license content, this property contains that new license content.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs.Password">
+            <summary>Gets the password entered by the user.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs.TriggerCodeNumber">
+            <summary>Gets the trigger code number to process (if a trigger code was validated successfully).</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs.TriggerCodeEventData">
+            <summary>Gets the trigger code event data (if applicable/if an "Activation Code 2" is required/entered).</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.LicensingGui">
+            <summary>Contains settings for a licensed application.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.#ctor">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.Gui.LicensingGui"/> object.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicensingGui.components">
+            <summary>Required designer variable.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.Dispose(System.Boolean)">
+            <summary>Clean up any resources being used.</summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.InitializeComponent">
+            <summary>Required method for Designer support.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.ShowDialog(com.softwarekey.Client.Gui.LicensingGuiDialog,System.Windows.Forms.IWin32Window,System.Windows.Forms.FormStartPosition)">
+            <summary>Displays the specified <see cref="T:com.softwarekey.Client.Gui.LicensingGuiDialog"/>.</summary>
+            <param name="dialog">The <see cref="T:com.softwarekey.Client.Gui.LicensingGuiDialog"/> to display.</param>
+            <param name="owner">The window which will own the modal dialog.</param>
+            <param name="position">The dialog's start position.</param>
+            <returns>Returns a <see cref="T:System.Windows.Forms.DialogResult"/>.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.ShowDialog(com.softwarekey.Client.Gui.LicensingGuiDialog,System.Windows.Forms.IWin32Window)">
+            <summary>Displays the specified <see cref="T:com.softwarekey.Client.Gui.LicensingGuiDialog"/>.</summary>
+            <param name="dialog">The <see cref="T:com.softwarekey.Client.Gui.LicensingGuiDialog"/> to display.</param>
+            <param name="owner">The window which will own the modal dialog.</param>
+            <returns>Returns a <see cref="T:System.Windows.Forms.DialogResult"/>.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.ShowDialog(com.softwarekey.Client.Gui.LicensingGuiDialog)">
+            <summary>Displays the specified <see cref="T:com.softwarekey.Client.Gui.LicensingGuiDialog"/>.</summary>
+            <param name="dialog">The <see cref="T:com.softwarekey.Client.Gui.LicensingGuiDialog"/> to display.</param>
+            <returns>Returns a <see cref="T:System.Windows.Forms.DialogResult"/>.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.InternetAutoDetect">
+            <summary>Runs Internet and proxy auto-detection, regardless of the value in the <see cref="P:com.softwarekey.Client.Gui.LicensingGui.InternetEnableAutoDetection"/> property.</summary>
+            <returns>Returns true if an Internet connection is present.  If false is returned, check the ConnectionInformation.LastError property for details.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.CreateNewXmlActivationServiceObject">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.WebService.XmlActivationService.XmlActivationService"/> object, which may be used for processing web service methods centered around activation.</summary>
+            <remarks>
+            <note type="caution">
+            <para>If <see cref="P:com.softwarekey.Client.Gui.LicensingGui.InternetEnableAutoDetection"/> is set to true, an automatic detection test may be run to test connectivity and detect proxy settings, which can cause delays.</para>
+            </note>
+            </remarks>
+            <returns>Returns a new <see cref="T:com.softwarekey.Client.WebService.XmlActivationService.XmlActivationService"/> object.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.CreateNewXmlLicenseFileServiceObject">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.WebService.XmlLicenseFileService.XmlLicenseFileService"/> object, which may be used for processing web service methods centered around XML license file calls to SOLO Server.</summary>
+            <remarks>
+            <note type="caution">
+            <para>If <see cref="P:com.softwarekey.Client.Gui.LicensingGui.InternetEnableAutoDetection"/> is set to true, an automatic detection test may be run to test connectivity and detect proxy settings, which can cause delays.</para>
+            </note>
+            </remarks>
+            <returns>Returns a new <see cref="T:com.softwarekey.Client.WebService.XmlLicenseFileService.XmlLicenseFileService"/> object.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.CreateNewXmlLicenseServiceObject">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.WebService.XmlLicenseService.XmlLicenseService"/> object, which may be used for processing web service methods centered around XML license calls to SOLO Server (such as update checks).</summary>
+            <remarks>
+            <note type="caution">
+            <para>If <see cref="P:com.softwarekey.Client.Gui.LicensingGui.InternetEnableAutoDetection"/> is set to true, an automatic detection test may be run to test connectivity and detect proxy settings, which can cause delays.</para>
+            </note>
+            </remarks>
+            <returns>Returns a new <see cref="T:com.softwarekey.Client.WebService.XmlLicenseService.XmlLicenseService"/> object.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.CreateNewXmlNetworkFloatingServiceObject">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.WebService.XmlNetworkFloatingService.XmlNetworkFloatingService"/> object, which may be used for processing web service methods centered around network floating licensing via SOLO Server.</summary>
+            <remarks>
+            <note type="caution">
+            <para>If <see cref="P:com.softwarekey.Client.Gui.LicensingGui.InternetEnableAutoDetection"/> is set to true, an automatic detection test may be run to test connectivity and detect proxy settings, which can cause delays.</para>
+            </note>
+            </remarks>
+            <returns>Returns a new <see cref="T:com.softwarekey.Client.WebService.XmlNetworkFloatingService.XmlNetworkFloatingService"/> object.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.LicenseManagementActionAllowed(com.softwarekey.Client.Gui.LicenseManagementActionTypes)">
+            <summary>Determines whether or not the specified license management action type is allowed.</summary>
+            <param name="actionType">The type of action that might be allowed or disallowed.</param>
+            <returns>Returns true if the action is allowed, or false if it is disallowed.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.OnLicenseManagementActionComplete(System.Object,com.softwarekey.Client.Gui.LicenseManagementActionCompleteEventArgs)">
+            <summary>Fires the SplashDoWork if a handler is present.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.OnManualActionLoadRequsted(System.Object,com.softwarekey.Client.Gui.ManualActionLoadRequestedEventArgs)">
+            <summary>Fires the <see cref="E:com.softwarekey.Client.Gui.LicensingGui.ManualActionLoadRequested"/> event.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.OnManualActionSaveRequested(System.Object,com.softwarekey.Client.Gui.ManualActionSaveRequestedEventArgs)">
+            <summary>Fires the <see cref="E:com.softwarekey.Client.Gui.LicensingGui.ManualActionSaveRequested"/> event handler, if present.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.UpdateLicenseManagementActionsAllowed(com.softwarekey.Client.Gui.LicenseManagementActionTypes,System.Boolean)">
+            <summary>Updates the <see cref="P:com.softwarekey.Client.Gui.LicensingGui.LicenseManagementActionsAllowed"/> property to allow or disallow a given type of <see cref="T:com.softwarekey.Client.Gui.LicenseManagementActionTypes"/>.</summary>
+            <param name="action">The <see cref="T:com.softwarekey.Client.Gui.LicenseManagementActionTypes"/> to either allow or disallow.</param>
+            <param name="allow">Whether or not the type of action should be allowed.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.OnSplashDoWork(System.Object,System.EventArgs)">
+            <summary>Fires the SplashDoWork if a handler is present.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.OnSplashWorkComplete(System.Object,System.EventArgs)">
+            <summary>Fires the SplashDoWork if a handler is present.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicensingGui.LoadSplashImageFile(System.String)">
+            <summary>Loads the <see cref="P:com.softwarekey.Client.Gui.LicensingGui.SplashImage"/> from a file.</summary>
+            <param name="path">The absolute path to the image file to load.</param>
+            <remarks>
+            <para>If the splash screen image cannot be loaded, the splash screen will still be displayed without the image.</para>
+            </remarks>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.Internet">
+            <summary>Internet settings</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.ConnectionInformation">
+            <summary>Gets automatically detected Internet connection information.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.ProxyAuthenticationCredentials">
+            <summary>Gets proxy server authentication credentials entered by the user.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.InternetAutoDetectionTimeout">
+            <summary>Gets or sets the maximum amount of time (in milliseconds) an automatic detection tests to run.</summary>
+            <remarks>
+            <para>This property is only applicable when <see cref="P:com.softwarekey.Client.Gui.LicensingGui.InternetEnableAutoDetection"/> is set to true.</para>
+            <note type="caution">
+            <para>
+            Automatic proxy detection is a convenient way to detect Internet and proxy server requirements, but can cause
+            delays, as this feature relies on test requests.  Delays will occur more frequently when a system is using
+            a slow Internet connection, or lacks Internet connectivity entirely.
+            </para>
+            </note>
+            </remarks>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.InternetAutoDetectionUri">
+            <summary>The URL to use for automatic detection tests.</summary>
+            <remarks>
+            <note type="caution">
+            <para>
+            This URL should match one of the web service URLs, and uses the default <see cref="P:com.softwarekey.Client.Gui.LicensingGui.XmlActivationServiceUri"/>
+            value for tests unless another URL is specified.
+            </para>
+            </note>
+            </remarks>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.InternetEnableAutoDetection">
+            <summary>Set to true to enable automatic detection, or false to disable this feature.</summary>
+            <remarks>
+            <note type="caution">
+            <para>
+            Automatic proxy detection is a convenient way to detect Internet and proxy server requirements, but can cause
+            delays, as this feature relies on test requests.  Delays will occur more frequently when a system is using
+            a slow Internet connection, or lacks Internet connectivity entirely.
+            </para>
+            </note>
+            </remarks>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.ManualRequestUri">
+            <summary>The URL to access SOLO Server's manual request processing page.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.XmlActivationServiceUri">
+            <summary>The URL to access SOLO Server's XmlActivationService web service.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.XmlLicenseFileServiceUri">
+            <summary>The URL to access SOLO Server's XmlLicenseFileService web service.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.XmlLicenseServiceUri">
+            <summary>The URL to access SOLO Server's XmlLicenseService web service.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.XmlNetworkFloatingServiceUri">
+            <summary>The URL to access SOLO Server's XmlNetworkFloatingService web service.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.ApplicationLicense">
+            <summary>Gets or sets the application's <see cref="T:com.softwarekey.Client.Licensing.License"/>.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.InitialLicenseID">
+            <summary>Gets or sets the initial License ID displayed on the license management dialog.</summary>
+            <remarks><para>When this property is set to a value greater than zero, the license management dialog will always show this License ID.</para></remarks>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.InitialPassword">
+            <summary>Gets or sets the initial password displayed on the license management dialog.</summary>
+            <remarks><para>This initial password is only applied when the <see cref="P:com.softwarekey.Client.Gui.LicensingGui.InitialLicenseID"/> property is set to a value greater than zero.</para></remarks>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.IsInstallationNameEnabled">
+            <summary>Gets or sets the if the Installation Name edit box is enabled or disabled.  If disabled, the user is not able to enter an Installation Name.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.LicenseManagementActionsAllowed">
+            <summary>Gets or sets the license management actions allowed.  You may manually add the integer values from the <see cref="T:com.softwarekey.Client.Gui.LicenseManagementActionTypes"/> enumeration and add select values together to only enable certain actions, or you may use one of the enumeration's masks (such as All or None).</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.LicenseStatusEntries">
+            <summary>Gets the collection of license status entries, which are displayed on the license management form.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.AllowOnlineActivation">
+            <summary>Gets or sets whether or not a user may activate online using the license management dialog.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.AllowOnlineDeactivation">
+            <summary>Gets or sets whether or not a user may deactivate online using the license management dialog.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.AllowOnlineRefresh">
+            <summary>Gets or sets whether or not a user may refresh online using the license management dialog.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.AllowManualActivation">
+            <summary>Gets or sets whether or not a user may activate manually using the license management dialog.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.AllowManualDeactivation">
+            <summary>Gets or sets whether or not a user may deactivate manually using the license management dialog.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.AllowManualRefresh">
+            <summary>Gets or sets whether or not a user may refresh manually using the license management dialog.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.DefaultRequestFileName">
+            <summary>Gets or sets the default request file name (Request.html by default).</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.ManagementDialogCustomIcon">
+            <summary>Gets or sets a custom icon (which overrides the default if set) for the license management dialog.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.ManagementDialogTitle">
+            <summary>Gets or sets the title of the license management dialog.</summary>
+        </member>
+        <member name="E:com.softwarekey.Client.Gui.LicensingGui.LicenseManagementActionComplete">
+            <summary>Occurs when the user has completed an action on the license management form.</summary>
+        </member>
+        <member name="E:com.softwarekey.Client.Gui.LicensingGui.ManualActionSaveRequested">
+            <summary>Occurs when the user requests to complete a manual request later (in case the application is closed).</summary>
+        </member>
+        <member name="E:com.softwarekey.Client.Gui.LicensingGui.ManualActionLoadRequested">
+            <summary>Occurs when a saved manual request should be restored so that it may be completed.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.IsAllActionsAllowed">
+            <summary>Gets whether or not all actions are truly allowed.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.IsAnyOnlineActionAllowed">
+            <summary>Gets whether or not any online action is allowed.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.IsAnyManualActionAllowed">
+            <summary>Gets whether or not any manual action is allowed.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.IsOnlyOneActionAllowed">
+            <summary>Gets whether or not only one type of license management action may be performed.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.IsOnlyActivationAllowed">
+            <summary>Gets whether or not only online and/or manual activation is allowed (excludes Trigger Code processing).</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.HasLicenseManagementActionCompleteEventHandler">
+            <summary>Gets whether or not a SplashDoWork handler has been specified.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.HasManualActionSaveRequestedEventHandler">
+            <summary>Gets whether or not a ManualActionSaveRequested event handler has been wired.</summary>
+        </member>
+        <member name="E:com.softwarekey.Client.Gui.LicensingGui.SplashDoWork">
+            <summary>Occurs when the splash screen is ready to perform some arbitrary work asynchronously.</summary>
+        </member>
+        <member name="E:com.softwarekey.Client.Gui.LicensingGui.SplashWorkCompleteEvent">
+            <summary>Occurs when the splash screen has completed some arbitrary work asynchronously.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.HasSplashDoWorkEventHandler">
+            <summary>Gets whether or not a SplashDoWork handler has been specified.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.SplashMinimumDuration">
+            <summary>Gets or sets the minimum duration which the splash screen should be displayed.  It may be displayed for a longer time if work is being done asynchronously.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.SplashBackgroundColor">
+            <summary>Gets or sets the splash screen's background color that is used when no splash image is used.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.SplashImage">
+            <summary>Gets or sets the image to display on the splash screen.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.SplashTopMost">
+            <summary>Gets or sets whether to splash screen shows on top of all other windows.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.AllowManualTriggerCode">
+            <summary>Gets or sets whether or not a user may manually alter the license using Protection PLUS 4 compatible trigger codes.</summary>
+            <remarks><para>This option only works with WritableLicense implementations, and is implied when supporting Downloadable License Files with Trigger Code Validation.</para></remarks>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.TriggerCodesRequireLicenseID">
+            <summary>Gets or sets whether or not users will be required to enter a License ID when activating via the manual exchange of trigger/activation codes.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.TriggerCodesRequirePassword">
+            <summary>Gets or sets whether or not users will be required to enter a password when activating via the manual exchange of trigger/activation codes.  Requiring a password will also require a License ID.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.RegKey2Seed">
+            <summary>Gets or sets the seed value used to decode "Activation Code 2" values when activating manually.  The decoded value will contain 14 bits of additional numeric data.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicensingGui.TriggerCodeSeed">
+            <summary>Gets or sets the seed value used for validating "Activation Code 1" values when activating manually.</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.LicenseManagementForm">
+            <summary>The license management form.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.#ctor(com.softwarekey.Client.Gui.LicensingGui)">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.Gui.LicenseManagementForm"/>.</summary>
+            <param name="settings">The <see cref="T:com.softwarekey.Client.Gui.LicensingGui"/>.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.CopyToClipboard(System.String)">
+            <summary>Copies a string value to the Windows clipboard.</summary>
+            <param name="value">The string value to copy to the clipboard.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ProcessActiveTab">
+            <summary>Processes the active tab.  This typically occurs when the Next button is clicked.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ResumeManualSession">
+            <summary>Attempts to resume a manual session.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ShiftControlVerticalPosition(System.Windows.Forms.Control,System.Windows.Forms.Control)">
+            <summary>Shift's a target control's vertical position to match another control's vertical position.</summary>
+            <param name="targetControl">The control that should have it's vertical position altered.</param>
+            <param name="positionControl">The control that has the new vertical position which the targetControl should assume.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.TabProcessingComplete(com.softwarekey.Client.Gui.LicenseManagementAction)">
+            <summary>Occurs when tab processing has completed.</summary>
+            <param name="action">The result of the processed action.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.UpdateSelectedTab(com.softwarekey.Client.Gui.LicenseManagementForm.SelectedTabIndex)">
+            <summary>Updates the selected tab.</summary>
+            <param name="newIndex">The new selected tab index.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.UpdateMainNextButtonText">
+            <summary>Updates the management form's "Next" button text.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.UpdateSelectedTabComponents">
+            <summary>Updates the controls based on the presently selected tab.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ValidateActiveTab">
+            <summary>Validates form fields on the active tab.</summary>
+            <returns>Returns true if the fields are valid, or false if they are invalid.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.InitializeStatusTab">
+            <summary>Initializes the controls on the status tab.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.InitializeStatusTabFull">
+            <summary>Initializes the full status tab.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.InitializeStatusTabOneActionOnly">
+            <summary>Initializes the status tab for processing only one action.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.InitializeStatusTabStatusOnly">
+            <summary>Initialize the status tab for the status-only view, where no management actions are allowed.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.BuildEntriesStatusString(System.Boolean)">
+            <summary>Builds a string containing the status text for the entries.</summary>
+            <param name="useAllItems">When true, the status for all entries will be included.  Otherwise, only the status for the selected entries is used.</param>
+            <returns>Returns a string containing the status text for the status entries.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ProcessStatusTab">
+            <summary>Processes the status tab.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.UpdateStatusTabControls">
+            <summary>Updates controls in the status tab based on validation results.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ValidateLicenseID(System.Boolean,System.String@)">
+            <summary>Validates the License ID on the status form.</summary>
+            <param name="focusIfInvalid">If true, the form field will gain focus when validation fails.</param>
+            <param name="errorMessage">A message describing why validation failed.</param>
+            <returns>Returns true if the form field is valid.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ValidatePassword(System.Boolean,System.String@)">
+            <summary>Validates the License ID on the status form.</summary>
+            <param name="focusIfInvalid">If true, the form field will gain focus when validation fails.</param>
+            <param name="errorMessage">A message describing why validation failed.</param>
+            <returns>Returns true if the form field is valid.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ValidateStatusTab(System.Boolean,System.String@)">
+            <summary>Validates the form fields on the license status tab.</summary>
+            <returns>Returns true if the fields are valid, or false if they are invalid.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.InitializeTriggerCodeTab">
+            <summary>Initializes the Trigger Code tab</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ValidateTriggerCodeTab">
+            <summary>Validates the Trigger Code tab.</summary>
+            <returns>Returns true if validation passed, or false if the data entered is invalid.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ProcessTriggerCodeTab">
+            <summary>Processes a manual activation performed on the trigger codes tab.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.InitializeRequestTab(System.Boolean)">
+            <summary>Initializes the request tab.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ValidateRequestTab">
+            <summary>Validates the form fields on the request tab.</summary>
+            <returns>Returns true if the fields are valid, or false if they are invalid.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ProcessRequestTab">
+            <summary>Processes the request tab.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.InitializeResponseTab">
+            <summary>Initializes the response tab.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ValidateResponseTab">
+            <summary>Validates the form fields on the response tab.</summary>
+            <returns>Returns true if the fields are valid, or false if they are invalid.</returns>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.ProcessResponseTab">
+            <summary>Processes the response tab.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.LicenseManagementForm_Load(System.Object,System.EventArgs)">
+            <summary>License management form load event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.LicenseManagementForm_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>License management form closing event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.LicenseManagementForm_FormClosed(System.Object,System.Windows.Forms.FormClosedEventArgs)">
+            <summary>Handler method for when the license management form is closed.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.TextBox_Trim_OnChanged(System.Object,System.EventArgs)">
+            <summary>TextBox TextChanged event handler that trims white-space off either side of the field's text.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.TextBox_KeyPress_AddSelectAll(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>Generic event handler for adding support for using ctrl-A to select all text in a text box.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.mainCancelButton_Click(System.Object,System.EventArgs)">
+            <summary>The Cancel button clicked handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.mainBackButton_Click(System.Object,System.EventArgs)">
+            <summary>The back button clicked handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.mainNextButton_Click(System.Object,System.EventArgs)">
+            <summary>Processes the currently active tab.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.actionLicenseIDTextBox_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>Suppresses various keystrokes in the License ID textbox.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.actionLicenseIDTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>Trims and validates the License ID textbox.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.actionLicenseIDTextBox_Validating(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>Validates the License ID text box.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Cancel event arguments.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.actionPasswordTextBox_TextChanged(System.Object,System.EventArgs)">
+            <summary>Trims and validates the Password textbox.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.actionPasswordTextBox_Validating(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>Validates the password text box.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Cancel event arguments.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.statusListView_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>Handles the mouse-up/clicked event when a user clicks the status list view or one of its items.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.copyToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>Handles the event where a user right-clicked on the list view or one of its items and clicked the menu option to copy the selected item(s) to the clipboard.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.copyAllToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>Handles the event where a user right-clicked on the list view or one of its items and clicked the menu option to copy the all items to the clipboard.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.actionSelection_CheckChanged(System.Object,System.EventArgs)">
+            <summary>Enables and disables status tab, action form fields based on what radio button was selected.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.actionUsingRadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>Enables and disables action radio buttons based on what actions are allowed.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.requestCopyButton_Click(System.Object,System.EventArgs)">
+            <summary>Copy button click event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.requestSaveFileRadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>Request save file radio button changed event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.requestCopyRadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>Request copy text radio button changed event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.requestFileBrowseButton_Click(System.Object,System.EventArgs)">
+            <summary>"Browse..." button click event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.requestLinkLabel_LinkClicked(System.Object,System.Windows.Forms.LinkLabelLinkClickedEventArgs)">
+            <summary>Manual request page link clicked event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.responseFileRadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>Open response file radio button changed event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.responsePasteRadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>Paste response radio button changed event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.responseFileBrowseButton_Click(System.Object,System.EventArgs)">
+            <summary>"Browse..." button click event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.responsePasteButton_Click(System.Object,System.EventArgs)">
+            <summary>Paste button click event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.responseTextBox_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>Handles a key press event for the response text box, and helps prevent accidental modification of content pasted into it.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.requestErrorCopyButton_Click(System.Object,System.EventArgs)">
+            <summary>Copy button click event handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments.</param>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseManagementForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.LicenseManagementForm.SelectedTabIndex">
+            <summary>Enumeration to make selected tab indices more legible in code.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementForm.SelectedTabIndex.Status">
+            <summary>The Status tab.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementForm.SelectedTabIndex.TriggerCode">
+            <summary>The Trigger Code tab.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementForm.SelectedTabIndex.Request">
+            <summary>The Request tab.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementForm.SelectedTabIndex.Response">
+            <summary>The Response tab.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementForm.SelectedTabIndex.Processing">
+            <summary>The Processing tab.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementForm.SelectedTabIndex.Failed">
+            <summary>The Failed tab.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementForm.SelectedTabIndex.Successful">
+            <summary>The ProcessedSuccessfully tab.</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.LicenseManagementForm.TabProcessingCompleteDelegate">
+            <summary>Delegate for calling <see cref="M:com.softwarekey.Client.Gui.LicenseManagementForm.TabProcessingComplete(com.softwarekey.Client.Gui.LicenseManagementAction)"/>.</summary>
+            <param name="actionResult">The result of the processed action.</param>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.LicenseStatusEntry">
+            <summary>Represents a license status entry.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseStatusEntry.#ctor(com.softwarekey.Client.Gui.LicenseStatusIcon,System.String,System.String)">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.Gui.LicenseStatusEntry"/></summary>
+            <param name="statusIcon">The icon to display in the list.</param>
+            <param name="displayName">The name of the status entry.  This can be "License" or the name of a particular application module, feature, or license parameter.</param>
+            <param name="displayStatus">The status text to display.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.LicenseStatusEntry.ToString">
+            <summary>Generates a string containing the name and status.</summary>
+            <returns>Returns a string containing the <see cref="P:com.softwarekey.Client.Gui.LicenseStatusEntry.DisplayName"/> and <see cref="P:com.softwarekey.Client.Gui.LicenseStatusEntry.DisplayStatus"/>.</returns>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseStatusEntry.StatusIcon">
+            <summary>Gets the status icon to display in the list.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseStatusEntry.DisplayName">
+            <summary>Gets the name of the item to display in the list.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.LicenseStatusEntry.DisplayStatus">
+            <summary>Gets the status text to display in the list.</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.LicensingGuiDialog">
+            <summary>License dialogs which may be displayed through the <see cref="M:com.softwarekey.Client.Gui.LicensingGui.ShowDialog(com.softwarekey.Client.Gui.LicensingGuiDialog,System.Windows.Forms.IWin32Window)"/> method.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicensingGuiDialog.LicenseManagement">
+            <summary>The license management dialog, which shows the license status and allows the user to perform actions on the license (such as activating, refreshing, and deactivating).</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicensingGuiDialog.ProxyCredentials">
+            <summary>Dialog for prompting a user for proxy server authentication credentials.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicensingGuiDialog.SplashScreen">
+            <summary>Splash screen dialog, which may be used for initialization.</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.LicenseManagementActionTypes">
+            <summary>Types of license management actions which may occur.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementActionTypes.All">
+            <summary>Mask for all actions.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementActionTypes.AllManualActions">
+            <summary>Mask for all manual actions (excluding ManualTriggerCode).</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementActionTypes.AllOnlineActions">
+            <summary>Mask for all online actions.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementActionTypes.None">
+            <summary>Mask for no actions.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementActionTypes.OnlineActivation">
+            <summary>Activate the license using a direct Internet connection.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementActionTypes.OnlineRefresh">
+            <summary>Refresh the license using a direct Internet connection.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementActionTypes.OnlineDeactivation">
+            <summary>Deactivate the license using a direct Internet connection.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementActionTypes.ManualActivation">
+            <summary>Activate manually using a web browser on any computer with an Internet connection.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementActionTypes.ManualRefresh">
+            <summary>Refresh manually using a web browser on any computer with an Internet connection.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementActionTypes.ManualDeactivation">
+            <summary>Deactivate manually using a web browser on any computer with an Internet connection.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseManagementActionTypes.ManualTriggerCode">
+            <summary>Activate manually using Protection PLUS 4 compatible trigger codes.</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.LicenseStatusIcon">
+            <summary>Different status icons.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseStatusIcon.None">
+            <summary>Don't display any icon in the list for this entry.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseStatusIcon.Ok">
+            <summary>The status of the entry is Ok.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseStatusIcon.Error">
+            <summary>The entry's status is invalid, possibly due to an error.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseStatusIcon.Information">
+            <summary>The entry's status is Ok, but may include some additional information worth informing the user about.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseStatusIcon.Unavailable">
+            <summary>The item, module, or feature is unavailable or disabled.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.LicenseStatusIcon.Warning">
+            <summary>The entry's status is Ok, but requires the user's attention.</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.ManualActionLoadRequestedEventArgs">
+            <summary>Contains event arguments for the <see cref="E:com.softwarekey.Client.Gui.LicensingGui.ManualActionLoadRequested"/> event.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.ManualActionLoadRequestedEventArgs.#ctor">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.Gui.ManualActionLoadRequestedEventArgs"/> object.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.ManualActionLoadRequestedEventArgs.Contents">
+            <summary>Gets or sets the contents that have been loaded (from a file or registry key, for example).</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.ManualActionSaveRequestedEventArgs">
+            <summary>Contains event arguments for the <see cref="E:com.softwarekey.Client.Gui.LicensingGui.ManualActionSaveRequested"/> event.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.ManualActionSaveRequestedEventArgs.#ctor(System.String)">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.Gui.ManualActionSaveRequestedEventArgs"/> object.</summary>
+            <param name="contents">The contents that should be saved for later use.</param>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.ManualActionSaveRequestedEventArgs.Contents">
+            <summary>Gets the contents that should be saved (to a file or registry key, for example).</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.NativeMethods">
+            <summary>Contains native P/Invoke methods.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.NativeMethods.SHGetKnownFolderPath(System.Guid,System.UInt32,System.IntPtr,System.String@)">
+            <summary>Platform invoke prototype for <see href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb762188.aspx">SHGetKnownFolderPath</see>.</summary>
+            <param name="rfid">Reference to the <see href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd378457.aspx">KNOWNFOLDERID</see>.</param>
+            <param name="dwFlags">Retrieval flags, typically 0.</param>
+            <param name="hToken">The access token, typically IntPtr.Zero for the current user.</param>
+            <param name="pszPath">The requested path, without a trailing backslash.</param>
+            <returns>Returns S_OK (0) if successful, E_FAIL (0x80004005) if the KNOWNFOLDERID does not have a path, or E_INVALIDARG (0x80070057) if KNOWNFOLDERID is not present on the system.</returns>
+        </member>
+        <member name="T:PLUSManagedGui.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PLUSManagedGui.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PLUSManagedGui.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PLUSManagedGui.Properties.Resources.complete_48x48">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLUSManagedGui.Properties.Resources.copy_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLUSManagedGui.Properties.Resources.default_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLUSManagedGui.Properties.Resources.error_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLUSManagedGui.Properties.Resources.info_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLUSManagedGui.Properties.Resources.warning_16x16">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLUSManagedGui.Properties.Resources.warning_48x48">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.ProxyCredentialsForm">
+            <summary>Proxy server authentication credentials form.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.ProxyCredentialsForm.#ctor">
+            <summary>ProxyCredentialsForm default constructor</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.ProxyCredentialsForm.proxyOkButton_Click(System.Object,System.EventArgs)">
+            <summary>Ok button click event handler</summary>
+            <param name="sender">object</param>
+            <param name="e">EventArgs</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.ProxyCredentialsForm.proxyCancelButton_Click(System.Object,System.EventArgs)">
+            <summary>Cancel button click event handler</summary>
+            <param name="sender">object</param>
+            <param name="e">EventArgs</param>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.ProxyCredentialsForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.ProxyCredentialsForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.ProxyCredentialsForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.ProxyCredentialsForm.Credentials">
+            <summary>Gets the proxy authentication credentials entered by the user.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.ProxyCredentialsForm.ProxyAddress">
+            <summary>Gets or set the proxy server address</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.SplashScreenForm">
+            <summary>Provides a simple splash screen implementation, which you may use in your application to display a splash screen while initializing your settings and validating your license.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.SplashScreenForm.#ctor(com.softwarekey.Client.Gui.LicensingGui)">
+            <summary>Creates a new <see cref="T:com.softwarekey.Client.Gui.SplashScreenForm"/>.</summary>
+            <param name="settings">The <see cref="T:com.softwarekey.Client.Gui.LicensingGui"/> object.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.SplashScreenForm.Work">
+            <summary>Runs the splash screen work, and runs <see cref="M:com.softwarekey.Client.Gui.SplashScreenForm.WorkComplete"/> when done..</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.SplashScreenForm.WorkComplete">
+            <summary>Runs when the splash screen work has been completed.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.SplashScreenForm.SplashScreenForm_Load(System.Object,System.EventArgs)">
+            <summary>Form load handler.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.SplashScreenForm.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>Paints the control.  (Override for alpha transparency support.)</summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.SplashScreenForm.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>Paints the background of the control.  (Override for alpha-transparency support.)</summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="F:com.softwarekey.Client.Gui.SplashScreenForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.SplashScreenForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.SplashScreenForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.SplashScreenForm.SplashScreenForm_Load_Delegate">
+            <summary>Delegate for the <see cref="M:com.softwarekey.Client.Gui.SplashScreenForm.SplashScreenForm_Load(System.Object,System.EventArgs)"/> method.</summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.SplashScreenForm.WorkCompleteDelegate">
+            <summary>Delegate for the <see cref="M:com.softwarekey.Client.Gui.SplashScreenForm.WorkComplete"/> method.</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Gui.WellKnownPath">
+            <summary>Helps deal with well-known folder IDs in Windows Vista and later.</summary>
+        </member>
+        <member name="M:com.softwarekey.Client.Gui.WellKnownPath.GetFolderPath(System.Guid)">
+            <summary>Gets a known folder path using the user access token.</summary>
+            <param name="folderID">The <see cref="T:System.Guid"/> used to identify the <see href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd378457.aspx">KNOWNFOLDERID</see>.</param>
+            <remarks>
+            <note type="caution">This method only works with Windows Vista and later. For older versions of Windows, use Environment.GetFolderPath instead.</note>
+            </remarks>
+            <returns>Returns the well-known path without a trailing slash, or returns an empty string if the path could not be found.</returns>
+        </member>
+        <member name="P:com.softwarekey.Client.Gui.WellKnownPath.Downloads">
+            <summary>The GUID for the Downloads folder.</summary>
+        </member>
+    </members>
+</doc>
