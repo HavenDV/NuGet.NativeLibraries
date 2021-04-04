@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NuspecFile>NuGet.nuspec</NuspecFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Brutal.Dev.StrongNameSigner" Version="2.7.1" GeneratePathProperty="true" IncludeAssets="none" />
+  </ItemGroup>
+
+  <Target Name="StrongName" BeforeTargets="PrepareForBuild">
+    <Exec Command="&quot;$(PkgBrutal_Dev_StrongNameSigner)\build\StrongNameSigner.Console.exe&quot; -InputDirectory lib -KeyFile key.snk" />
+  </Target>
+
+</Project>

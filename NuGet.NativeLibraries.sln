@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JCS.ToggleSwitch", "src\JCS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unofficial.PLUSManaged", "src\Unofficial.PLUSManaged\Unofficial.PLUSManaged.csproj", "{0C100A97-4BF7-4711-B2BB-380BCDC0E89B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaterialSkin.StrongName", "src\MaterialSkin.StrongName\MaterialSkin.StrongName.csproj", "{8A1D1BE5-6038-4E07-B8D5-FCC2B53D3656}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{0C100A97-4BF7-4711-B2BB-380BCDC0E89B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C100A97-4BF7-4711-B2BB-380BCDC0E89B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C100A97-4BF7-4711-B2BB-380BCDC0E89B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A1D1BE5-6038-4E07-B8D5-FCC2B53D3656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A1D1BE5-6038-4E07-B8D5-FCC2B53D3656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A1D1BE5-6038-4E07-B8D5-FCC2B53D3656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A1D1BE5-6038-4E07-B8D5-FCC2B53D3656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
